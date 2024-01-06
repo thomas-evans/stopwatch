@@ -99,7 +99,7 @@ const debouncedAnimate = debounce(() => animate(), 250);
             6.4 * (canvas.height / 1.75)
         ]
         digits.forEach((digit, index) => {
-            // todo check if digit to the right is active, if not skip drawing, unless it is the first digit
+            // todo check if digit to the right is active, if not skip drawing, unless it is the first digit, this may only be possible with multiple canvases
             if (!canvas) return;
             const startingXPosition = startingPositions[index]
             new Seven({height: canvas.height, angle: 0, digit: digit}).segments.forEach(segment => {
@@ -260,10 +260,3 @@ const debouncedAnimate = debounce(() => animate(), 250);
         </article>
     </>);
 })
-
-
-//todo you could probably refactor this to be simpler
-//todo add this to monorepo
-//todo possible draw on multiple canvases
-//todo add eslint
-//todo add prettier
